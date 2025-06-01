@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyparser = require('body-parser');
-const db = require('../db');
+const connectDB = require('../db');
 const serverless  = require('serverless-http');
 require('dotenv').config();
 
@@ -9,6 +9,9 @@ const userRouter = require('../UserRoute');
 const User = require('../Model/User');
 
 const app = express();
+
+
+connectDB();
 
 app.use(cors({
      origin: '*',
