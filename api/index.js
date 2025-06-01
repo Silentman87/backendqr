@@ -32,6 +32,5 @@ app.get('/hello', (req, res) => {
 
 
 
-module.exports =  app;
 module.exports.handler = serverless(app)
 
