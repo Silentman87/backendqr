@@ -25,6 +25,10 @@ app.use(bodyparser.json());
 app.use('/testuser', userRouter);
 
 
+app.get('/hello', (req, res) => {
+  res.json({ message: "Hello from Vercel!" });
+});
+
 
 
 
