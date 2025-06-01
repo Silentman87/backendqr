@@ -1,0 +1,9 @@
+{
+    "version":2,
+    "route":[
+         {
+            "src":"/textuser/(.*)",
+            "dest":"/api/index.js"
+         }
+    ]
+}
