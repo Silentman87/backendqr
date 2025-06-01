@@ -1,8 +1,9 @@
 # Node modules
 node_modules/
-
-# Environment variables
 .env
+bun.lock
+
+\
 
 # Logs
 logs/

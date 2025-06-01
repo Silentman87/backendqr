@@ -28,6 +28,6 @@ app.use('/testuser', userRouter);
 
 
 
-module.exports =  index;
-module.exports.handler = serverless(index)
+module.exports =  app;
+module.exports.handler = serverless(app)
 
