@@ -1,9 +1,0 @@
-{
-    "version":2,
-    "routes":[
-        {
-            "src":"/testuser/(.*)",
-            "dest":"/api/app.js"
-        }
-    ]
-}

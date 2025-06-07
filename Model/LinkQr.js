@@ -4,7 +4,7 @@ const LinkQr = new mongoose.Schema({
      user: {
          type: mongoose.Schema.ObjectId,
          required: true,
-         ref: "user_msts"
+         ref: "User_sts"
      },
      qrlink: {
         type:String,
