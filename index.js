@@ -4,9 +4,9 @@ const express = require('express');
 const cors = require('cors');
 const bodyparser = require('body-parser');
 const serverless = require('serverless-http');
-require('../db');
+require('./db');
 
-const userRouter = require('../UserRoute');
+const userRouter = require('./UserRoute');
 
 const app = express();
 
@@ -19,5 +19,9 @@ app.use(cors({
 // Routes
 app.use('/testuser', userRouter);
 
-module.exports = app
-module.exports.handlers = serverless(app)
+const PORt = 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
+
