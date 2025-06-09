@@ -13,7 +13,8 @@ const app = express();
 // Middleware
 app.use(bodyparser.json());
 app.use(cors({
-    origin: '*'
+  origin: 'https://frontendqr-woov.onrender.com',
+  credentials: true
 }));
 
 // Routes
