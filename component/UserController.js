@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const LinkQr = require('../Model/LinkQr');
 const User = require('../Model/User');
 const nodemail =  require('nodemailer');
+const Activity = require('../Model/Activity');
 
 exports.getqrlink = async(req,res) => {
    try {
@@ -33,6 +34,10 @@ exports.addlink = async(req, res) => {
         
            const saveQr = await  newLinkQr.save();
            res.json(saveQr)
+            await Activity.create({
+          message: `${user.uname} created a new QR code`
+  });
+
         }
         catch (error) {
            res.json({"error": error})
@@ -137,7 +142,10 @@ exports.loguser = async (req,res) => {
                 {expiresIn: '5m'}
               )
                 res.json({"loginsts" : "0", "token": token})
-              
+               
+                await Activity.create({
+                message: `${userlogin.uname} logged in`
+  });
             }
          }
 

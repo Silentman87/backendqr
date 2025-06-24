@@ -3,6 +3,7 @@ const express = require('express');
 
  // const {  reguser } = require('./component/UserController'); 
  const {reguser , msgg , loguser, addlink, getqrlink ,sendemail } = require('./component/UserController');
+
  const {uAuth} = require('./middleware/UserAuthentication');
   
 
@@ -21,6 +22,8 @@ const express = require('express');
      })
   });
   
+
+
   //http://localhost:5000/testuser/addlinkqr {qrlink,qrcolor,user} take  give = {saveqr msg}
   router.post('/addlinkqr',uAuth,addlink);
   //http://localhost:5000/testuser/reguser {uname,uemail,upass}take give = {msg ,user{id,username,email}}
