@@ -14,14 +14,13 @@ const app = express();
 app.use(bodyparser.json());
 app.use(cors({
   origin: [
+    'https://frontendqr-woov.onrender.com',
     'http://localhost:3000',
     'http://localhost:5173',
-    'https://frontendqr-woov.onrender.com'
   ],
   credentials: true
 }));
- 
-// for serverles fronend url https://frontendqr-woov.onrender.com 
+ //'https://frontendqr-woov.onrender.com'
 // Routes
 app.use('/testuser', userRouter);
 app.use('/dashboard', dashboardRouter);
